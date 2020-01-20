@@ -1,0 +1,81 @@
+MATLAB is selecting SOFTWARE OPENGL rendering.
+
+                            < M A T L A B (R) >
+                  Copyright 1984-2014 The MathWorks, Inc.
+                   R2014b (8.4.0.150421) 64-bit (glnxa64)
+                             September 15, 2014
+
+[Warning: Name is nonexistent or not a directory: /opt/matlab/toolbox/mexnc] 
+[Warning: Name is nonexistent or not a directory: /opt/matlab/toolbox/snctools] 
+[Warning: Name is nonexistent or not a directory: /opt/matlab/toolbox/netcdf] 
+[Warning: Name is nonexistent or not a directory:
+/opt/matlab/toolbox/netcdf/nctype] 
+[Warning: Name is nonexistent or not a directory:
+/opt/matlab/toolbox/netcdf/ncutility] 
+[Warning: Name is nonexistent or not a directory: /opt/matlab/toolbox/mexnc] 
+[Warning: Name is nonexistent or not a directory: /opt/matlab/toolbox/snctools] 
+[Warning: Name is nonexistent or not a directory: /opt/matlab/toolbox/netcdf] 
+[Warning: Name is nonexistent or not a directory:
+/opt/matlab/toolbox/netcdf/nctype] 
+[Warning: Name is nonexistent or not a directory:
+/opt/matlab/toolbox/netcdf/ncutility] 
+ 
+To get started, type one of these: helpwin, helpdesk, or demo.
+For product information, visit www.mathworks.com.
+ 
+>> netcdf limpasuvan_waccm_meanT {
+dimensions:
+	time = 7970 ;
+	lon = 144 ;
+	lat = 96 ;
+variables:
+	float time(time) ;
+		time:name = "time" ;
+		time:unit = "decimal year" ;
+	float lon(lon) ;
+		lon:name = "longitude" ;
+		lon:unit = "degE" ;
+	float lat(lat) ;
+		lat:name = "latitude" ;
+		lat:unit = "degN" ;
+	float temperature(time, lat, lon) ;
+		temperature:name = "mean temperature between 10-50 hPa" ;
+		temperature:unit = "K" ;
+
+// global attributes:
+		:AUTHOR = "Dr. King-Fai Li" ;
+		:DATE = "Tue Jan 10 18:37:12 2017" ;
+		:DESCRIPTION = "Based on Limpasuvan WACCM simulations" ;
+		:PROCESS_PATH = "/media/exhdd2/kfli/model/waccm/kfl/preprocessT" ;
+		:DATA_PATH = "/home/kfli/exhdd2/model/waccm/limpasuvan/1990-2011_WACCM/T/" ;
+}
+
+ans =
+
+         144          96        7970
+
+
+ans =
+
+   144     1
+
+
+ans =
+
+    96     1
+
+
+ans =
+
+        7970           1
+
+  %% Deseasonalizing ... 
+log4j:WARN No appenders could be found for logger (org.apache.fop.util.ContentHandlerFactoryRegistry).
+log4j:WARN Please initialize the log4j system properly.
+./Teq.pdf ready
+./Tnp.pdf ready
+>> done
+
+cat: nohup.out: No such file or directory
+
+the above output can be found in nohup.out

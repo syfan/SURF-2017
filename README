@@ -1,0 +1,116 @@
+Dear Xin,
+
+I have a preprocessed stratospheric temperature data for demonstration.
+
+Please log on to hiatus.amath. You need to well organize your directories. As a start, in your home directory (/home/xqin/), on the unix command line, execute the following commands:
+
+mkdir model
+mkdir model/waccm
+mkdir model/waccm/kfl
+cd model/waccm/kfl
+
+Now you should be in /home/xqin/model/waccm/kfl/. (Check this by executing pwd.) Then
+
+cp -rL /home/kfli/exhdd2/model/waccm/kfl/4xqin ./
+
+./ means the current directory. Then
+
+cd 4xqin
+
+Here you will find a README file, a number of m-files and a run.com. A README file is important for any one who wants to use the programs. In this case, I just copied what I wrote in this email to the README for record. My convention is that the topmost level program is called MAIN.m and the running script is called run.com. MAIN.m will read a proprocessed NetCDF file of stratospheric temperature, do equatorial/Arctic averaging and plot the time series. To execute MAIN.m, you can execute the following command:
+
+run.com
+
+If the program runs successfully, you should see three output files: nohup.out, Teq.pdf, and Tnp.pdf
+
+nohup.out contains all Matlab messages.
+Teq.pdf is the equatorial time series.
+Tnp.pdf is the Arctic time series.
+
+To open the PDF files, a good way is to download the files to your computer instead of opening them through the terminal. Download and install Filezilla. Once installed, use "Site Manager" to set up a connection to
+hiatus.amath. Choose "SFTP" for protocol. "Host" is 
+
+hiatus.amath.washington.edu.
+
+Leave "Port" blank. Choose normal for Logon Type and put your username and
+password below. Then you will be able to log on. Then go to "View" and "Filename filters". Check "Useless Explorer files", "Temporary and backup files", and "Configuration files".
+
+The way to learn is, imagine you are to do exactly what I did, how are you going to write your programs? Make a new directory
+
+/home/xqin/model/waccm/xqin/
+
+and write a program there starting from scratch to read the NetCDF file, do equatorial/Arctic averaging and plot the time series. You will learn a lot through this exercise.
+
+This is the homework for you before I give you the next task. The next task is slightly more complicated.
+
+Let me know at once if you have questions. At your stage, most of the questions would be technical and I usually can resolve them in a minute.
+
+Dr. Li
+
+
+
+
+
+
+
+
+
+---------------------------------------------------------
+If you are done with temperature, then you can proceed to do the same for
+ozone.
+
+Please obtain the data below and plot the ozone time series as for
+temperature. Let me know when you are done.
+
+/home/kfli/exhdd2/model/waccm/kfl/preprocessO3/limpasuvan_waccm_monO3.nc
+
+Yes at this stage. But very soon you will have to work on UNIX because the
+data will be very large.
+
+Dr. Li
+
+> Yes, I read through your code and repeat exactly you did in the example.
+> Also, I found it is more convenience to program on Matlab on my computer
+> and upload the .m files to hiatus via Filezilla, is that OK?
+>
+> Xin
+
+
+At first I want you to repeat exactly what I did in the example. Have you
+done it yet?
+
+Dr. Li
+
+> I understand now, but what should I plot with the data?
+>
+> Xin
+>
+>
+> On Tuesday, January 24, 2017 at 9:45 PM, King-Fai Li wrote:
+>
+>> x-axis is time and y-axis is equatorial/Arctic average temperature in my
+>> example.
+>>
+>> Equatorial average is to average over (1) all longitudes and (2)
+>> latitudes
+>> between 15S and 15 N.
+>>
+>> Arctic average is to average over (1) all longitudes and (2) latitudes
+>> between 65S and 90N.
+>>
+>> Sorry that I had a typo in Line 40. Line 40 should read
+>>
+>> % Plot the Arctic average
+>>
+>> Dr. Li
+>>
+>> > Dr. Li,
+>> > Sorry for the late email. In the time series plots, if the x-axis is
+>> time,
+>> > then what is the y-axis? I checked the data in NetCDF and your code,
+>> > should I do longitude? Then what is range for the longitude? Also,
+>> what is
+>> > that mean by equatorial/arctic average? Is that means average them
+>> > together or the separate average along longitude?
+>> > Best,
+>> > Xin
